@@ -1,4 +1,4 @@
-const dinos = [
+let dinos = [
     {
       id: 'dino1',
       name: 'Rex',
@@ -37,7 +37,7 @@ const dinos = [
       owner: 'Abbey',
       adventures: [],
       health: 100,
-      imageUrl: 'https://lh3.googleusercontent.com/proxy/_rJSL88ErOEvgHl5SInWOEolOdikwIMcKWPv9iqZzt3IUkD33WdG6d9qd8TmNJFSiszTXm7JeGQPocmB_BZErKxt__25LOpW75dmnVuy0nuY0PatX2cIYA-C'
+      imageUrl: 'https://api.time.com/wp-content/uploads/2018/06/dinosaurs-jurassic-world-fact-check-3.jpg'
     },
     {
       id: 'dino5',
@@ -90,3 +90,5 @@ const dinos = [
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTOdrC7hlvBawFQ7g8vgwHcfQphX5WfeN2bth0dvc4M2oxNGdSD'
     }
   ];
+
+  export {dinos}
