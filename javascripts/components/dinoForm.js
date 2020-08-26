@@ -1,12 +1,12 @@
 import { dinos } from '../data/data.js'
-import { dinoCards } from './dinoCards.js'
+import { printNewDino } from './dinoCards.js'
 
 const dinoSubmit = () => {
     $('#dinoFormSubmit').on('click', () => {
         dinos.push({id: `dino${dinos.length + 1}`, name: $('#dinoFormName').val(), type: $('#dinoFormType').val(), age: $('#dinoFormAge').val(), owner: $('#dinoFormOwner').val(), 
-    adventures: [], health: 100, imageUrl: $('#dinoFormImage').val()})
-        $('#dinoKennel').empty();
-        dinoCards(dinos);
+        adventures: [], health: 100, imageUrl: $('#dinoFormImage').val()})
+        printNewDino();
+        $('#dinoForm').empty();
     })
 }
 
