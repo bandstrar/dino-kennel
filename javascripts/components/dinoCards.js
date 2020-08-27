@@ -1,4 +1,5 @@
 import { dinos } from '../data/data.js'
+import { dinoButtons } from './dinoButtons.js'
 
 const printDinoCards = () => {
     dinos.forEach((dino) => {
@@ -21,22 +22,7 @@ const printDinoCards = () => {
             )
             $(`#progressContainer${dino.id}`).replaceWith('<i class="fas fa-skull-crossbones"></i>')
             }
-            dinoFood(dino);
-    })
-}
-
-const dinoFood = (dino) => {
-    $(`#food${dino.id}`).on('click', () => {
-        if (dino.health < 100) {
-        dino.health += 10;
-        printDinoCards();
-        }
-    })
-    $(`#pet${dino.id}`).on('click', () => {
-        if (dino.health < 100) {
-        dino.health += 5;
-        printDinoCards();
-        }
+            dinoButtons(dino);
     })
 }
 
@@ -51,6 +37,7 @@ const dinoCards = (dino) => {
       <div id="buttonContainer${dino.id}">
         <button type="submit" id="food${dino.id}"><i class="fas fa-utensils"></i></button>
         <button type="submit" id="pet${dino.id}"><i class="fas fa-hand-sparkles"></i></button>
+        <button type="submit" id="adventure${dino.id}"><i class="fas fa-hiking"></i></button>
         </div>
     </div>
   </div>`
