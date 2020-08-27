@@ -32,6 +32,12 @@ const dinoFood = (dino) => {
         printDinoCards();
         }
     })
+    $(`#pet${dino.id}`).on('click', () => {
+        if (dino.health < 100) {
+        dino.health += 5;
+        printDinoCards();
+        }
+    })
 }
 
 const dinoCards = (dino) => {
@@ -42,7 +48,10 @@ const dinoCards = (dino) => {
       <div id="progressContainer${dino.id}" class="progress">
         <div id="progress${dino.id}" class="progress-bar progress-bar-striped" role="progressbar" style="width: ${dino.health}%" aria-valuenow="${dino.health}" aria-valuemin="0" aria-valuemax="100">${dino.health}%</div>
       </div>
+      <div id="buttonContainer${dino.id}">
         <button type="submit" id="food${dino.id}"><i class="fas fa-utensils"></i></button>
+        <button type="submit" id="pet${dino.id}"><i class="fas fa-hand-sparkles"></i></button>
+        </div>
     </div>
   </div>`
 }
