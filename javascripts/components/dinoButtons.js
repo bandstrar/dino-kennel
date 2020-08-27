@@ -29,9 +29,9 @@ const dinoButtons = (dino) => {
         printDinoCards();
     })
     $(`#remove${dino.id}`).on('click', () => {
-        const dinoIndex = dinos.indexOf(dino.id)
-        console.log(dinoIndex)
-        dinos.splice(dinoIndex, 1);
+        dinos.splice(($(`#dino${dino.id}`).index() - 1), 1);
+        $(`#dino${dino.id}`).remove();
+        console.log(dinos);
         printDinoCards();
     })
 }
