@@ -1,5 +1,5 @@
 import { printDinoCards } from './dinoCards.js'
-import { adventures } from '../data/data.js'
+import { adventures, dinos } from '../data/data.js'
 
 
 const dinoButtons = (dino) => {
@@ -19,11 +19,19 @@ const dinoButtons = (dino) => {
         const randomAdventure = Math.floor(Math.random() * Math.floor(adventures.length))
         const failOrSuccess = Math.floor(Math.random() * Math.floor(100))
         dino.adventures.push(adventures[randomAdventure].title)
-        if (failOrSuccess > 50 && dino.health < 100) {
+        if (dino.health < 100) {
+        if (failOrSuccess > 50) {
             dino.health += adventures[randomAdventure].healthHit;
         } else {
             dino.health -= 10
         }
+    }
+        printDinoCards();
+    })
+    $(`#remove${dino.id}`).on('click', () => {
+        const dinoIndex = dinos.indexOf(dino.id)
+        console.log(dinoIndex)
+        dinos.splice(dinoIndex, 1);
         printDinoCards();
     })
 }
