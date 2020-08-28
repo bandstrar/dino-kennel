@@ -1,7 +1,7 @@
 import { printDinoCards } from './dinoCards.js'
 import { dinos } from '../data/data.js'
 import { buildModal } from './dinoModal.js'
-import { dinoAdventure } from './dinoAdventure.js'
+import { dinoAdventure, modalAdventure } from './dinoAdventure.js'
 
 
 const dinoButtons = (dino) => {
@@ -9,6 +9,7 @@ const dinoButtons = (dino) => {
         $('#dinoModal').append(
         buildModal(dino)
         )
+        modalAdventure(dino)
     })
 
     $(`#food${dino.id}`).on('click', () => {
