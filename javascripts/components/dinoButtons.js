@@ -1,6 +1,7 @@
 import { printDinoCards } from './dinoCards.js'
-import { adventures, dinos } from '../data/data.js'
+import { dinos } from '../data/data.js'
 import { buildModal } from './dinoModal.js'
+import { dinoAdventure } from './dinoAdventure.js'
 
 
 const dinoButtons = (dino) => {
@@ -25,16 +26,7 @@ const dinoButtons = (dino) => {
     })
 
     $(`#adventure${dino.id}`).on('click', () => {
-        const randomAdventure = Math.floor(Math.random() * Math.floor(adventures.length))
-        const failOrSuccess = Math.floor(Math.random() * Math.floor(100))
-        dino.adventures.push(adventures[randomAdventure].title)
-        if (dino.health < 100) {
-        if (failOrSuccess > 50) {
-            dino.health += adventures[randomAdventure].healthHit;
-        } else {
-            dino.health -= 10
-        }
-    }
+        dinoAdventure(dino)
         printDinoCards();
     })
 
