@@ -42,4 +42,6 @@ const buildModal = (dino) => {
 </div>`
 }
 
+
+
 export { buildModal }
