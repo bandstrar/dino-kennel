@@ -6,6 +6,7 @@ import { dinoAdventure, modalAdventure } from './dinoAdventure.js'
 
 const dinoButtons = (dino) => {
     $(`#image${dino.id}`).on('click', () => {
+        $('#dinoModal').empty();
         $('#dinoModal').append(
         buildModal(dino)
         )
