@@ -3,13 +3,16 @@ import {adventures} from '../data/data.js'
 const dinoAdventure = (dino) => {
     const randomAdventure = Math.floor(Math.random() * Math.floor(adventures.length))
     const failOrSuccess = Math.floor(Math.random() * Math.floor(100))
+    let yayOrNay = ''
     if (dino.health < 100) {
-    dino.adventures.push({date: Date(), title: adventures[randomAdventure].title})
         if (failOrSuccess > 50) {
             dino.health += adventures[randomAdventure].healthHit;
+            yayOrNay = 'Succeeded at'
         } else {
             dino.health -= 10
+            yayOrNay = 'Failed at'
         }
+        dino.adventures.push({date: Date(), title: `${yayOrNay} ${adventures[randomAdventure].title}`})
     }
 }
 

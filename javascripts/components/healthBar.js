@@ -9,7 +9,7 @@ const dinoHealth = (dino) => {
         <div id="progress${dino.id}" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: ${dino.health}%" aria-valuenow="${dino.health}" aria-valuemin="0" aria-valuemax="100">${dino.health}%</div>
       </div>`
     } else {
-        domString += '<i class="fas fa-skull-crossbones"></i>'
+        domString += '<div class="d-flex justify-content-center"><i class="fas fa-skull-crossbones"></i></div>'
     }
     return domString;
 }
