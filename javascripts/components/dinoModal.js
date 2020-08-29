@@ -15,7 +15,7 @@ const buildModal = (dino) => {
             <div id="dinoImageContainer${dino.id}">
                 <img src="${dino.imageUrl}" class="img-fluid w-75 m-1"  alt="${dino.name}">
             </div>
-            <div id="dinoInfoContainer${dino.id}" class="mr-4 w-50 mb-2 float-right">
+            <div id="dinoInfoContainer${dino.id}" class="mr-4 w-50 mb-2">
                 <h3>${dino.name}</h3>
                 <h6>Type: ${dino.type}</h6>
                 <h6>Age: ${dino.age}</h6>
@@ -23,10 +23,11 @@ const buildModal = (dino) => {
                     ${dinoHealth(dino)}
             </div>
         </div>
+        <h4 class="text-center">Adventures</h4>
             <div class="adventure-info">
               <table class="table table-hover">
                 <thead>
-                  <tr>
+                  <tr class="bg-secondary">
                     <th scope="col">#</th>
                     <th scope="col">Date</th>
                     <th scope="col">Type</th>
@@ -34,7 +35,7 @@ const buildModal = (dino) => {
                 </thead>
                 <tbody></tbody>
               </table>
-            </div>
+            </h5>
         </div>
       </div>
     </div>
