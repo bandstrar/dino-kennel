@@ -12,21 +12,41 @@ const dinoAdventure = (dino) => {
             dino.health -= 10
             yayOrNay = 'Failed at'
         }
-        dino.adventures.push({date: Date(), title: `${yayOrNay} ${adventures[randomAdventure].title}`})
+        dino.adventures.push({date: Date(), title: `${yayOrNay} ${adventures[randomAdventure].title}`});
     }
+}
+
+const showAdventure = (dino) => {
+    dino.adventures.forEach((adventure) => {
+        if(adventure.title.includes('Succeeded')) {
+            $(`#successOrFail${dino.id}`).html(`<div class="text-success" id="successOrFail${dino.id}">${adventure.title}</div>`);
+        } else {
+            $(`#successOrFail${dino.id}`).html(`<div class="text-danger" id="successOrFail${dino.id}">${adventure.title}</div>`);
+        }
+    })
 }
 
 const modalAdventure = (dino) => {
     $("td").remove()
     dino.adventures.forEach((adventure) => {
+        if(adventure.title.includes('Succeeded')) {
     $("tbody").append(
         `<tr>
           <td>${dino.adventures.indexOf(adventure) + 1}</td>
           <td>${adventure.date}</td>
-          <td>${adventure.title}</td>
+          <td class="text-success">${adventure.title}</td>
         </tr>`
       )
+    } else {
+        $("tbody").append(
+            `<tr>
+              <td>${dino.adventures.indexOf(adventure) + 1}</td>
+              <td>${adventure.date}</td>
+              <td class="text-danger">${adventure.title}</td>
+            </tr>`
+          )
+    }
     })
 }
 
-export {dinoAdventure, modalAdventure}
+export {dinoAdventure, modalAdventure, showAdventure}

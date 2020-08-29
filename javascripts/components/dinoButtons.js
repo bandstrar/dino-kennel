@@ -1,7 +1,7 @@
 import { printDinoCards } from './dinoCards.js'
 import { dinos } from '../data/data.js'
 import { buildModal } from './dinoModal.js'
-import { dinoAdventure, modalAdventure } from './dinoAdventure.js'
+import { dinoAdventure, modalAdventure, showAdventure } from './dinoAdventure.js'
 
 
 const dinoButtons = (dino) => {
@@ -30,6 +30,8 @@ const dinoButtons = (dino) => {
     $(`#adventure${dino.id}`).on('click', () => {
         dinoAdventure(dino)
         printDinoCards();
+        $(`#successOrFail${dino.id}`).empty();
+        showAdventure(dino)
     })
 
     $(`#remove${dino.id}`).on('click', () => {
