@@ -39,7 +39,8 @@ const dinoCards = (dino) => {
         <button type="submit" id="pet${dino.id}" class="mt-4 w-50 btn-warning"><i class="fas fa-hand-sparkles"></i></button>
         <button type="submit" id="adventure${dino.id}" class="mt-4 w-50 btn-secondary"><i class="fas fa-hiking"></i></button>
         <button type="submit" id="remove${dino.id}" class="mt-4 w-50 btn-danger"><i class="fas fa-minus-circle"></i></button>
-        </div>
+      </div>
+      <div id="successOrFail${dino.id}"></div>
     </div>
   </div>`
 }
